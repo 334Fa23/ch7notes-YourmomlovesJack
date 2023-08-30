@@ -1,11 +1,11 @@
 /*
-Author:
-Date:
+Author: Jack Stafford
+Date: 8.29.23
 File Name: styles.css
 */
 
 /* CSS Reset */
-body, header, nav, main, footer, h1, div, img, ul {
+body, header, nav, main, footer, h1, div, img, ul, figure, figcaption, section, article, aside {
     margin: 0;
     padding: 0;
     border: 0;
@@ -21,12 +21,18 @@ img {
     display: block;
 }
 
+
+/* Style rules for box sixing applies to all elements */
+
+*{
+  box-sizing: border-box;
+}
+
+
 /* Style rules for mobile viewport */
 
 /* Style rule for header */
 header {
-    position: -webkit-sticky; 
-    position: sticky;
     top: 0;
     background-color: #000;
     height: 190px;
@@ -69,6 +75,25 @@ nav li a {
     display: block;
 }
 
+article {
+  padding: 2%;
+}
+article h3 {
+  text-align: center;
+}
+article img {
+  margin: 0 auto;
+}
+article ul {
+  margin-left: 10%;
+}
+
+article:nth-of-type(2) {
+  background-color:  rgba(204, 204, 204, 0.3);
+
+}
+
+
 .tablet-desktop {
     display: none;
 }
@@ -105,7 +130,28 @@ main {
     font-size: 1.35em;
     color: #666600;
     font-weight: bold;
+    text-shadow: 5px 5px 8px #ccc;
+
 }
+
+.frame {
+position: relative;
+max-width:  450px;
+margin: 2 %auto;
+}
+
+
+.pic-text {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.0);
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-family:
+}
+
 
 #weights, #cardio, #training {
     margin: 0 2%;
@@ -151,7 +197,7 @@ footer p a {
 
 /* Media Query for Tablet Viewport */
 @media screen and (min-width: 630px), print {
-    
+
     /* Tablet Viewport: Show tablet-desktop class, hide mobile class */
     .tablet-desktop {
         display: block;
@@ -160,33 +206,60 @@ footer p a {
     .mobile {
         display: none;
     }
-    
+
     /* Tablet Viewport: Style rule for header */
     header {
-        position: static;
         padding-bottom: 2%;
     }
-    
+
     /* Tablet Viewport: Style rules for nav area */
     nav li {
         border-top: none;
         display: inline-block;
         border-right: 1px solid #fff;
     }
-    
+
     nav li:last-child {
         border-right: none;
     }
-    
+
     nav li a {
         padding: 0.1em 0.75em;
     }
-    
+
     /* Tablet Viewport: Style rules for main content area */
     main ul {
         margin: 0 0 4% 10%;
     }
-    
+.grid{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+}
+
+.pic-text {
+  font-size: 1em;
+  padding: 10px;
+}
+
+aside {
+  font-size: : 1.24em;
+  font-style: italic;
+  font-weight: bold;
+  padding: 2%;
+  background-color: rgba(204, 204, 204, 0.5);
+box-shadow: 5px 5px 8px #000;
+text-shadow: 5px 5px 5px #b3b3b3;
+border-radius: 0 15px;
+}
+
+.grid-item4 {
+  grid-column: 1 / span 3;
+}
+
+
+
+
     #exercises {
         border-top: 1px solid #000;
         border-bottom: 1px solid #000;
@@ -201,29 +274,29 @@ footer p a {
 
     #exercises dd {
         padding: 0.5% 1% 2% 0;
-    } 
-    
+    }
+
     .tel-num {
         font-size: 1.25em;
     }
-    
+
     .map {
         width: 600px;
         height: 450px;
     }
-    
+
 }
 
 /* Media Query for Desktop Viewport */
 @media screen and (min-width: 1015px), print {
-    
+
     /* Desktop Viewport: Style rule for header */
     header {
         width: 25%;
         float: left;
         padding-bottom: 0;
     }
-    
+
     /* Desktop Viewport: Style rules for nav area */
     nav {
         float: right;
@@ -234,7 +307,7 @@ footer p a {
     nav ul {
         text-align: right;
     }
-    
+
     nav li {
         border: none;
     }
@@ -242,21 +315,44 @@ footer p a {
     nav li a {
         padding: 0.5em 1em;
     }
-    
+
     nav li a:hover {
         color: #000;
         background-color: #fff;
     }
-    
+
     /* Desktop Viewport: Style Rules for main content */
     main {
         clear: left;
     }
-    
+
+.mobile h3 {
+  text-shadow: 5px 5px 8px #ccc;
+}
+
+article h3 {
+  font-size: 1.75em;
+}
+
     main h1 {
         font-size: 1.8em;
     }
-    
+
+.pic-text {
+  font-size: 1.5em;
+  padding: 20px;
+}
+
+.frame {
+  opacity: 0.9;
+}
+.frame: hover {
+  opacity: 1;
+  box-shadow: 8px 8px 10px #808080;
+}
+
+
+
     #weights, #cardio, #training {
         width: 29%;
         float: left;
@@ -266,26 +362,25 @@ footer p a {
     #exercises {
         clear: left;
     }
-    
+
 }
 
 /* Media Query for Large Desktop Viewports */
 @media screen and (min-width: 1921px) {
- 
+
     #container {
         width: 1920px;
         margin: 0 auto;
     }
-    
+
 }
 
 /* Media Query for Print */
 @media print {
-    
+
     body {
         background-color: #fff;
         color: #000;
     }
 
 }
- 
